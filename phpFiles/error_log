@@ -1,0 +1,13 @@
+[04-Feb-2020 09:20:20 UTC] PHP Notice:  Undefined index: ID in /home/beaajjmoaqxf/public_html/phpFiles/updateInfo.php on line 6
+[04-Feb-2020 11:52:51 UTC] PHP Warning:  unlink(../uploadedPDF/5e3869ac94fea-Resume.pdf): No such file or directory in /home/beaajjmoaqxf/public_html/phpFiles/delete.php on line 15
+[04-Feb-2020 11:53:01 UTC] PHP Warning:  unlink(uploadedPDF/5e386a06b72e2-Resume.pdf): No such file or directory in /home/beaajjmoaqxf/public_html/phpFiles/delete.php on line 15
+[04-Feb-2020 11:53:14 UTC] PHP Warning:  unlink(): http does not allow unlinking in /home/beaajjmoaqxf/public_html/phpFiles/delete.php on line 15
+[11-Feb-2020 08:45:27 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/beaajjmoaqxf/public_html/phpFiles/connection.php on line 14
+[11-Feb-2020 08:45:32 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/beaajjmoaqxf/public_html/phpFiles/connection.php on line 14
+[11-Feb-2020 08:47:01 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/beaajjmoaqxf/public_html/phpFiles/connection.php on line 14
+[11-Feb-2020 09:51:22 UTC] PHP Warning:  unlink(../): Is a directory in /home/beaajjmoaqxf/public_html/phpFiles/delete.php on line 15
+[28-Nov-2020 10:10:41 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/u542442405/domains/alumnite.co/public_html/phpFiles/loginAction.php on line 11
+[28-Nov-2020 10:10:52 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/u542442405/domains/alumnite.co/public_html/phpFiles/forgotPass.php on line 65
+[28-Nov-2020 10:18:16 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/u542442405/domains/alumnite.co/public_html/phpFiles/loginAction.php on line 11
+[28-Nov-2020 10:18:24 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/u542442405/domains/alumnite.co/public_html/phpFiles/registerAction.php on line 14
+[28-Nov-2020 13:26:15 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'u542442405_alumnite'@'localhost' (using password: YES) in /home/u542442405/domains/alumnite.co/public_html/phpFiles/connection.php on line 14

@@ -1,0 +1,152 @@
+body{
+    background: #f3f3f3;
+}
+
+#searchRow{
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #ffffff;
+/*    border: 1px solid black;*/
+}
+
+#searchRow input:focus{
+    border: none;
+    outline: 0;
+}
+#searchRow div i{
+    background: #2f323a;
+    color: #ffffff;
+    padding: 10px;
+}
+.search{
+    font-size: 20px;
+    border: none;
+    width: 90%;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.viewBtn{
+    text-decoration: none;
+    background: none;
+    border: 1px solid #2f323a;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #2f323a;
+}
+
+.viewBtn:hover{
+    color: #fff;
+    background-color: #2f323a;
+    text-decoration: none;
+}
+
+.QARow{
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.QARow:hover{
+    cursor: pointer;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+.quesClass{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.descClass{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+.comment{
+    height: 100%;
+    width: 100%;
+    
+}
+
+#commentTA{
+    width: 98%;
+    padding: 5px;
+}
+
+#commentSubmit{
+    padding: 5px;
+    margin: 10px;
+}
+
+#commentSubmit:hover{
+    background-color: #2f323a;
+    color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+#post_ques_div{
+    width: 100%;
+    float: right;
+}
+
+#post_ques_div button{
+    color: black;
+    width: 100%;
+    border: none;
+}
+
+#post_ques_div button i{
+    background: white;
+    color: black;
+}
+
+#ask_question_container{
+    margin-top: 15px;
+}
+
+#ask_question_container h1{
+    font-family: 'Playfair Display', serif;
+}
+
+.myAskQuestion{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#detailsAsk{
+    width: 98%;
+    border: none;
+    outline: none;
+}
+
+#AskQuestionSubmit{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    width: 97%;
+}
+
+#AskQuestionSubmit:hover{
+    background-color: #2f323a;
+    color: white;
+}
+
+#result_container{
+    margin-top: 10px;
+}
+
+#ask_question_success{
+    display: none;
+}
+
+#ask_question_fail{
+    display: none;
+}
