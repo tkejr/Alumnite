@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'connection.php';
+include 'findAndSetUser.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -17,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (mysqli_query($conn, $sql)) {
             $_SESSION["Email"] = $username;
             $_SESSION["Uni"] = $uniV;
-            echo "1";
+
+            echo findAndSetCurrentUser($username);
         } else {
             echo "2";
             // echo mysqli_error($conn);
@@ -25,17 +27,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 } else {
     $username = $_GET['gooEmail'];
-
-    $sqli = "Select * from userInfo where Email='$username'";
-    $result = mysqli_query($conn, $sqli);
-    $exists = mysqli_num_rows($result);
-
-    if ($exists > 0) {
-        //id found login 
-        while ($row = mysqli_fetch_assoc($result)) {
-            $_SESSION["Email"] = $row['Email'];
-            $_SESSION["Uni"] = $row['University'];
-            echo "1";
-        }
-    }
+    echo findAndSetCurrentUser($username);
 }

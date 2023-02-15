@@ -96,7 +96,7 @@
 
  						<div class="MyProfGroup input-group">
  							<label for="myProfEmail" class="input-group-addon"><i class="fas fa-envelope"></i></label>
- 							<input type="text" class="form-control" name="myProfEmail" id="myProfEmail" placeholder="Your Email" value="<?php echo $table_email; ?>" required />
+ 							<input type="text" class="form-control" name="myProfEmail" id="myProfEmail" placeholder="Your Email" value="<?php echo $table_email; ?>" required disabled />
  						</div>
 
  						<div class="MyProfGroup input-group">
@@ -223,7 +223,7 @@
  						url: 'phpFiles/updateInfo.php',
  						data: $(this).serialize(),
  						success: function(response) {
- 							if (response === "0") {
+ 							if (response === "1") {
  								$("#successAlert").html("Updated Successfully.");
  								document.getElementById("failAlert").style.display = "none";
  								// location.reload();
@@ -238,8 +238,6 @@
  					});
  				});
 
-
-
  				$('#ChangePassForm').submit(function(e) {
  					e.preventDefault();
 
@@ -252,10 +250,10 @@
  							url: 'phpFiles/ChangePass.php',
  							data: $(this).serialize(),
  							success: function(response) {
- 								if (response === "0") {
+ 								if (response === "1") {
  									location.reload();
  									alert("Your password is successfully changed.")
- 								} else if (response === "1") {
+ 								} else if (response === "0") {
  									$("#changePassRes").html("There was some error updating the password.");
  								} else if (response === "2") {
  									$("#changePassRes").html("Your old password did not match.");

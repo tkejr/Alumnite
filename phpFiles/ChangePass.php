@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'connection.php';
+include 'findAndSetUser.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
@@ -28,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$sql = "UPDATE userInfo SET Password='$newPass' WHERE Email='$username' ";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "0"; //success
+					echo findAndSetCurrentUser($username);
 				} else {
-					echo "1"; //Error updating
+					echo "0"; //Error updating
 				}
 			} else {
 				echo "2"; //wrong pass
