@@ -3,7 +3,6 @@
 			?>
 
  		<title>About</title>
- 		<script src="contactform/contactform.js"></script>
 
  		<style type="text/css">
  			.social-link {

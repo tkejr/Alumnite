@@ -105,9 +105,7 @@
 
 			</div>
 
-			<?php
-			include 'footer.php';
-			?>
+
 
 			<div class="loader-wrapper" style="background-color: #fcfcfc;">
 				<span class="loader"><span class="loader-inner"></span></span>
@@ -119,6 +117,6 @@
 				});
 			</script>
 
-		</body>
-
-		</html>
+			<?php
+			include 'footer.php';
+			?>

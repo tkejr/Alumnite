@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	include 'connection.php';
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -34,5 +33,3 @@
 		// else{
 	// 	echo "4";//internal error
 	// }
-
-?>

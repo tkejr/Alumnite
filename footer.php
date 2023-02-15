@@ -1,12 +1,3 @@
-		<!-- <?php
-					// include 'headerFiles.php';
-					?>
-		</head>
-
-
-
-		<body> -->
-
 		<footer class="footer container">
 			<div class="footer-logo justify-content-center row">
 				<a><img src="img/logo.png" height="100" width="120"></a>

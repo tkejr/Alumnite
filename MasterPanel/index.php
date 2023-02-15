@@ -1,7 +1,3 @@
-<?php
-session_start();
-// $_SESSION['MainAdminLoggedIn'] = "false";
-?>
 <!DOCTYPE html>
 <html>
 

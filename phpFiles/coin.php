@@ -1,96 +1,93 @@
-<?php 
-	include 'connection.php';
+<?php
+include 'connection.php';
 
-	session_start();
-	$username = $_SESSION['Email'];
-	$counter = 0;
+session_start();
+$username = $_SESSION['Email'];
+$counter = 0;
 
-	function fetchCoins(){
+function fetchCoins()
+{
 
-		global $username, $conn, $counter;
+	global $username, $conn, $counter;
 
-		$sqli="Select * from userInfo where Email='$username'";
-		$result=mysqli_query($conn,$sqli);	
-		$exists=mysqli_num_rows($result); //it checks that the username exsists or not
-			
-			$coins="";
-			
-			
-			if($exists>0) //checks are there any existing rows
-			{
-				while($row = mysqli_fetch_assoc($result))//shows all rows from result
-				{
-					$coins = $row['Coins'];
-				}
-			}
-			else
-			{ 
-				echo "Id Not found";
-			}	
+	$sqli = "Select * from userInfo where Email='$username'";
+	$result = mysqli_query($conn, $sqli);
+	$exists = mysqli_num_rows($result); //it checks that the username exsists or not
 
-			$counter++;
-			return $coins;
+	$coins = "";
+
+
+	if ($exists > 0) //checks are there any existing rows
+	{
+		while ($row = mysqli_fetch_assoc($result)) //shows all rows from result
+		{
+			$coins = $row['Coins'];
+		}
+	} else {
+		echo "Id Not found";
 	}
 
-	function addCoins($addCoins, $email){
+	$counter++;
+	return $coins;
+}
 
-		global $conn, $username;
-		
-		$username = $email;
+function addCoins($addCoins, $email)
+{
 
-		$myCoin = fetchCoins();
-		$coins = (int)$myCoin + $addCoins;
-		$mess = "";
+	global $conn, $username;
 
-		$sql = "UPDATE userInfo SET Coins='$coins' WHERE Email='$username' ";
+	$username = $email;
+
+	$myCoin = fetchCoins();
+	$coins = (int)$myCoin + $addCoins;
+	$mess = "";
+
+	$sql = "UPDATE userInfo SET Coins='$coins' WHERE Email='$username' ";
+
+	if (mysqli_query($conn, $sql)) {
+		$mess = "Success";
+	} else {
+		$mess = "Error updating record: " . mysqli_error($conn);
+	}
+
+	return $mess;
+}
+
+function deleteCoins($delCoins)
+{
+	global $conn, $username, $counter;
+
+	$myCoin = (int)fetchCoins();
+	$mess = "";
+
+	// echo $myCoin."<br>";
+
+	if ($myCoin >= $delCoins) {
+
+		$myCoin = $myCoin - $delCoins;
+
+		$sql = "UPDATE userInfo SET Coins='$myCoin' WHERE Email='$username' ";
 
 		if (mysqli_query($conn, $sql)) {
-		    $mess = "Success";
+			$mess = "Success";
 		} else {
-		    $mess = "Error updating record: " . mysqli_error($conn);
+			$mess = "Error updating record: " . mysqli_error($conn);
 		}
-
-		return $mess;
-
+	} else {
+		$mess = "no";
 	}
 
-	function deleteCoins($delCoins){
-		global $conn, $username, $counter;
+	// echo $counter;
+	return $mess;
+}
 
-		$myCoin = (int)fetchCoins();
-		$mess = "";
+// addCoins(1000);
+// echo fetchCoins();
+// echo deleteCoins(2);
 
-		// echo $myCoin."<br>";
-		
-		if ($myCoin >= $delCoins ) {
-		
-			$myCoin = $myCoin - $delCoins;
-		
-			$sql = "UPDATE userInfo SET Coins='$myCoin' WHERE Email='$username' ";
-
-			if (mysqli_query($conn, $sql)) {
-			    $mess = "Success";
-			} else {
-			    $mess = "Error updating record: " . mysqli_error($conn);
-			}
-		}
-		else{
-			$mess = "no";
-		}
-
-		// echo $counter;
-		return $mess;
-
-	}
-
-	// addCoins(1000);
-	// echo fetchCoins();
-	// echo deleteCoins(2);
-
-	if($_POST['action'] == 'call_this') {
-		echo deleteCoins(2);
-	}
+if ($_POST['action'] == 'call_this') {
+	echo deleteCoins(2);
+}
 
 
 // mysqli_close($conn);
-?>
