@@ -5,7 +5,7 @@ include '../phpFiles/connection.php';
     $val = $_GET['val'];
 
 
-    $sql = "UPDATE userInfo SET Coins='$val' WHERE ID='$id' ";
+    $sql = "UPDATE userinfo SET Coins='$val' WHERE ID='$id' ";
 
     if (mysqli_query($conn, $sql)) {
         echo "Successfully Updated";
@@ -14,6 +14,3 @@ include '../phpFiles/connection.php';
     }
 
     mysqli_close($conn);
-
-
-?>

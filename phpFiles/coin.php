@@ -10,7 +10,7 @@ function fetchCoins()
 
 	global $username, $conn, $counter;
 
-	$sqli = "Select * from userInfo where Email='$username'";
+	$sqli = "Select * from userinfo where Email='$username'";
 	$result = mysqli_query($conn, $sqli);
 	$exists = mysqli_num_rows($result); //it checks that the username exsists or not
 
@@ -42,7 +42,7 @@ function addCoins($addCoins, $email)
 	$coins = (int)$myCoin + $addCoins;
 	$mess = "";
 
-	$sql = "UPDATE userInfo SET Coins='$coins' WHERE Email='$username' ";
+	$sql = "UPDATE userinfo SET Coins='$coins' WHERE Email='$username' ";
 
 	if (mysqli_query($conn, $sql)) {
 		$mess = "Success";
@@ -66,7 +66,7 @@ function deleteCoins($delCoins)
 
 		$myCoin = $myCoin - $delCoins;
 
-		$sql = "UPDATE userInfo SET Coins='$myCoin' WHERE Email='$username' ";
+		$sql = "UPDATE userinfo SET Coins='$myCoin' WHERE Email='$username' ";
 
 		if (mysqli_query($conn, $sql)) {
 			$mess = "Success";

@@ -187,7 +187,7 @@
 
 			<?php
 			include "../phpFiles/connection.php";
-			$tblName = "PDFs";
+			$tblName = "pdfs";
 
 			$sql = "SELECT * from $tblName";
 			$result = mysqli_query($conn, $sql) or die("SELECT Error: ");
@@ -276,7 +276,7 @@
 
 			<?php
 			include "../phpFiles/connection.php";
-			$tblName = "userInfo";
+			$tblName = "userinfo";
 
 			$sql = "SELECT * from $tblName";
 			$result = mysqli_query($conn, $sql) or die("SELECT Error: ");

@@ -11,7 +11,7 @@ if (isset($_POST['myEmail'])) {
     // More headers
     $headers .= "From: <" . $from . ">";
 
-    $sqli = "Select * from userInfo where Email='$to'";
+    $sqli = "Select * from userinfo where Email='$to'";
     $result = mysqli_query($conn, $sqli);
     $exists = mysqli_num_rows($result); //it checks that the username exsists or not
     $pass = "";

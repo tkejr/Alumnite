@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($uniV) || empty($name) || empty($username)) {
         echo "Variables Empty: Error ";
     } else {
-        $sql = "INSERT INTO userInfo(Email,Password, Name, Major, GradDate, PhoneNo, Coins, University) values('$username','', '$name', '', '', '', '5', '$uniV')";
+        $sql = "INSERT INTO userinfo(Email,Password, Name, Major, GradDate, PhoneNo, Coins, University) values('$username','', '$name', '', '', '', '5', '$uniV')";
 
         if (mysqli_query($conn, $sql)) {
             $_SESSION["Email"] = $username;

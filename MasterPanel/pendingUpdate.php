@@ -8,13 +8,13 @@
 		$res = $_GET["res"];
 
 
-		$sql = "UPDATE PDFs SET Pending='$res' WHERE ID='$id' ";
+		$sql = "UPDATE pdfs SET Pending='$res' WHERE ID='$id' ";
 		if (mysqli_query($conn, $sql)) {
 		    echo "Update Success";
 		    
 		    if($res == "No"){
 		        
-    		    $sqli="SELECT * FROM PDFs WHERE ID='$id' ";
+    		    $sqli="SELECT * FROM pdfs WHERE ID='$id' ";
         		$result=mysqli_query($conn,$sqli);	
         		$exists=mysqli_num_rows($result);
         		
@@ -49,5 +49,3 @@
 		mysqli_close($conn);
 
 	}
-
-?>

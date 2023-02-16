@@ -3,7 +3,7 @@ session_start();
 function findAndSetCurrentUser($email): String
 {
     include 'connection.php';
-    $sqli = "Select * from userInfo where Email='$email'";
+    $sqli = "Select * from userinfo where Email='$email'";
     $result = mysqli_query($conn, $sqli);
     $exists = mysqli_num_rows($result);
 

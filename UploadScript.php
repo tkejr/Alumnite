@@ -65,7 +65,7 @@ function updateDB()
 	global $subject, $year, $prof, $title, $desc, $target_file, $userName, $classLvl, $category, $university;
 	include "phpFiles/connection.php";
 
-	$table = "PDFs";
+	$table = "pdfs";
 
 
 	$sql = "INSERT INTO $table (Subject, Year, Prof, UploadedBy, Name, Description, pathName, Pending, ClassLvl, Category, University) VALUES ('$subject', '$year', '$prof', '$userName', '$title', '$desc', '$target_file', 'Yes', '$classLvl', '$category', '$university')";

@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$uniV = $_POST['upldUni'];
 
 
-	$sqli = "Select * from userInfo where Email='$username'";
+	$sqli = "Select * from userinfo where Email='$username'";
 	$result = mysqli_query($conn, $sqli);
 	$exists = mysqli_num_rows($result);
 	$table_email = "";
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		echo "3";
 	} else {
 
-		$sql = "INSERT INTO userInfo(Email,Password, Name, Major, GradDate, PhoneNo, Coins, University) values('$username','$pass', '$name', '', '', '', '5', '$uniV')";
+		$sql = "INSERT INTO userinfo(Email,Password, Name, Major, GradDate, PhoneNo, Coins, University) values('$username','$pass', '$name', '', '', '', '5', '$uniV')";
 
 		if (mysqli_query($conn, $sql)) {
 			echo findAndSetCurrentUser($username);

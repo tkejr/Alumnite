@@ -24,7 +24,7 @@ include "headerFiles.php";
     } else {
 
         $username = $_SESSION['Email'];
-        $sqli = "Select * from userInfo where Email='$username'";
+        $sqli = "Select * from userinfo where Email='$username'";
         $result = mysqli_query($conn, $sqli);
         $exists = mysqli_num_rows($result); //it checks that the username exsists or not
         $table_email = "";

@@ -8,7 +8,7 @@
 		$path = $_GET["path"];
 
 		// sql to delete a record
-		$sql = "DELETE FROM PDFs WHERE id='$id'";
+		$sql = "DELETE FROM pdfs WHERE id='$id'";
 
 		if (mysqli_query($conn, $sql)) {
 			// Use unlink() function to delete a file  
@@ -20,5 +20,3 @@
 		}
 
 	}
-	
-?>

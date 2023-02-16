@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// $phoneNo = "12345";
 
 
-	$sql = "UPDATE userInfo SET Email='$email', Name='$name', Major='$major', GradDate='$gradDate', PhoneNo='$phoneNo', University='$uni' WHERE ID='$id' ";
+	$sql = "UPDATE userinfo SET Email='$email', Name='$name', Major='$major', GradDate='$gradDate', PhoneNo='$phoneNo', University='$uni' WHERE ID='$id' ";
 
 	if (mysqli_query($conn, $sql)) {
 

@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// $oldPass="12345678";
 	// $newPass="321";
 
-	$sqli = "Select * from userInfo where Email='$username'";
+	$sqli = "Select * from userinfo where Email='$username'";
 	$result = mysqli_query($conn, $sqli);
 	$exists = mysqli_num_rows($result); //it checks that the username exsists or not
 	$table_email = "";
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$table_pass = $row['Password'];
 
 			if (($username == $table_email) && ($oldPass == $table_pass)) {
-				$sql = "UPDATE userInfo SET Password='$newPass' WHERE Email='$username' ";
+				$sql = "UPDATE userinfo SET Password='$newPass' WHERE Email='$username' ";
 
 				if (mysqli_query($conn, $sql)) {
 					echo findAndSetCurrentUser($username);

@@ -84,7 +84,7 @@ $quesId = $_GET["id"];
 
             $tblName = "Answers";
 
-            $sql = "SELECT * from $tblName a left join userInfo i on a.AnsweredBy = i.Email WHERE Linked_quesId = $quesId";
+            $sql = "SELECT * from $tblName a left join userinfo i on a.AnsweredBy = i.Email WHERE Linked_quesId = $quesId";
             $result = mysqli_query($conn, $sql) or die("SELECT Error: ");
 
             $answerdBy = "";

@@ -110,7 +110,7 @@
 
 						<?php
 						include "phpFiles/connection.php";
-						$tblName = "PDFs";
+						$tblName = "pdfs";
 
 						$uni = $_SESSION['Uni'];
 						// echo "<script>alert('$uni')</script>";
